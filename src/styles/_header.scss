@@ -1,0 +1,91 @@
+@use 'variaveis';
+
+.header {
+    background: linear-gradient(to bottom, #000, variaveis.$corDFundo);
+    padding: 1rem 5.6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background 0.3s ease, padding 0.3s ease;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    &__links {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        transition: opacity 0.3s ease;
+
+        &__item {
+            margin-left: 1rem;
+            transition: opacity 0.3s ease;
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            a {
+                font-size: 1rem;
+                color: variaveis.$corDTexto;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                background-color: variaveis.$corDHighLight;
+                border-radius: 4px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover {
+                    background-color: variaveis.$corDBotao;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        img {
+            max-width: 50px;
+            height: auto;
+        }
+    }
+
+    &--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, #000, variaveis.$corDFundo);
+        z-index: 1000;
+        padding: 0.5rem 5.6vw;
+
+        .header__links__item--conhecer {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .header__links__item--alugar a {
+            background-color: transparent;
+            color: variaveis.$corDTexto;
+            border: 2px solid variaveis.$corDHighLight;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover{
+                background-color: variaveis.$corDBotao;
+                color: #fff;
+            }
+        }
+    }
+}
